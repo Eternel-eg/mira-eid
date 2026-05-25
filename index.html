@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eid Mubarak, My Love ✨</title>
-    <!-- Tailwind CSS for modern responsive styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for premium elegant typography -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons for clean UI visual keys -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Canvas Confetti library for final celebration -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <!-- HTML5-QRCode Library for high-performance in-browser camera scanning -->
     <script src="https://unpkg.com/html5-qrcode"></script>
 
     <script>
@@ -78,30 +73,27 @@
         .heart-glow {
             animation: heart-pulse 2s infinite ease-in-out;
         }
-        /* Custom scrollbars for a premium feel */
+        /* Custom scrollbars for a premium feel (Light theme) */
         ::-webkit-scrollbar {
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #012018;
+            background: #fafaf9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #f59e0b;
+            background: #fbbf24;
             border-radius: 10px;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 text-stone-100 min-h-screen font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-amber-400 selection:text-emerald-950">
+<body class="bg-gradient-to-br from-stone-50 via-stone-100 to-stone-200 text-stone-800 min-h-screen font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-amber-400 selection:text-stone-900">
 
-    <!-- Background Music Audio Tag -->
     <audio id="bg-music" src="music1.mp3" loop preload="auto"></audio>
 
-    <!-- Magical Sparkle Layer -->
     <div id="sparkle-container" class="absolute inset-0 pointer-events-none overflow-hidden z-0"></div>
 
-    <!-- Floating Lantern SVGs (Eid Aesthetic) -->
-    <div class="absolute top-4 left-4 md:left-10 z-10 pointer-events-none opacity-40 md:opacity-75 animate-lantern" style="animation-delay: 0s;">
-        <svg class="w-12 h-20 md:w-16 md:h-28 text-amber-400" fill="currentColor" viewBox="0 0 100 150">
+    <div class="absolute top-4 left-4 md:left-10 z-10 pointer-events-none opacity-50 md:opacity-75 animate-lantern" style="animation-delay: 0s;">
+        <svg class="w-12 h-20 md:w-16 md:h-28 text-amber-500" fill="currentColor" viewBox="0 0 100 150">
             <path d="M50,10 C40,25 30,35 30,50 C30,75 40,85 50,90 C60,85 70,75 70,50 C70,35 60,25 50,10 Z" opacity="0.8"/>
             <rect x="45" y="90" width="10" height="20" rx="3" opacity="0.9"/>
             <circle cx="50" cy="5" r="5" />
@@ -109,8 +101,8 @@
             <line x1="50" y1="0" x2="50" y2="10" stroke="currentColor" stroke-width="2"/>
         </svg>
     </div>
-    <div class="absolute top-10 right-4 md:right-10 z-10 pointer-events-none opacity-40 md:opacity-75 animate-lantern" style="animation-delay: 2s;">
-        <svg class="w-10 h-16 md:w-14 md:h-24 text-amber-400" fill="currentColor" viewBox="0 0 100 150">
+    <div class="absolute top-10 right-4 md:right-10 z-10 pointer-events-none opacity-50 md:opacity-75 animate-lantern" style="animation-delay: 2s;">
+        <svg class="w-10 h-16 md:w-14 md:h-24 text-amber-500" fill="currentColor" viewBox="0 0 100 150">
             <path d="M50,15 C42,28 35,38 35,50 C35,70 42,80 50,85 C58,80 65,70 65,50 C65,38 58,28 50,15 Z" opacity="0.8"/>
             <rect x="46" y="85" width="8" height="15" rx="2" opacity="0.9"/>
             <circle cx="50" cy="10" r="4" />
@@ -119,129 +111,117 @@
         </svg>
     </div>
 
-    <!-- Audio Player controls floating in top-right -->
-    <div id="audio-control-container" class="absolute top-4 right-4 z-30 flex items-center gap-2 bg-emerald-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-400/30 text-xs hidden">
-        <button id="music-toggle" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-medium">
-            <i class="fa-solid fa-music text-amber-400" id="music-icon"></i>
+    <div id="audio-control-container" class="absolute top-4 right-4 z-30 flex items-center gap-2 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-300 text-xs shadow-sm hidden">
+        <button id="music-toggle" class="hover:text-amber-500 transition-colors flex items-center gap-1.5 font-medium text-stone-600">
+            <i class="fa-solid fa-music text-amber-500" id="music-icon"></i>
             <span id="music-text">Ambient: Off</span>
         </button>
     </div>
 
     <main class="flex-grow flex items-center justify-center px-4 py-12 z-10 w-full max-w-lg mx-auto">
 
-        <!-- SCREEN 0: Time-Gate / Countdown Screen (Active before 26/05/2026 6 PM Egypt Time) -->
-        <div id="time-gate-screen" class="w-full bg-amber-950/60 backdrop-blur-lg border border-amber-400/50 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden hidden">
+        <div id="time-gate-screen" class="w-full bg-white/70 backdrop-blur-lg border border-amber-300 p-8 rounded-3xl text-center shadow-xl relative overflow-hidden hidden">
             <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl"></div>
             
             <div class="mb-6">
-                <!-- Golden Crescent & Star design -->
                 <div class="inline-block relative">
-                    <i class="fa-solid fa-hourglass-half text-5xl text-amber-400 filter drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]"></i>
+                    <i class="fa-solid fa-hourglass-half text-5xl text-amber-500 filter drop-shadow-[0_0_10px_rgba(251,191,36,0.3)]"></i>
                 </div>
             </div>
 
-            <h1 class="font-serif text-2xl md:text-3xl text-amber-300 font-bold tracking-wide mb-2">A Secret Awaits...</h1>
-            <p class="text-stone-200 text-xs md:text-sm leading-relaxed mb-6 font-sans font-light">
-                The treasure hunt will open at exactly <span class="text-amber-400 font-semibold">6:00 PM on May 26th</span>. Rest your head, be patient, and let the anticipation build, my love. ✨
+            <h1 class="font-serif text-2xl md:text-3xl text-emerald-900 font-bold tracking-wide mb-2">A Secret Awaits...</h1>
+            <p class="text-stone-600 text-xs md:text-sm leading-relaxed mb-6 font-sans font-light">
+                The treasure hunt will open at exactly <span class="text-amber-600 font-semibold">6:00 PM on May 26th</span>. Rest your head, be patient, and let the anticipation build, my love. ✨
             </p>
 
-            <!-- GIF 1 Embedded gracefully here -->
-            <div class="mb-6 rounded-2xl overflow-hidden border border-amber-400/30 max-h-48 flex items-center justify-center bg-stone-900 shadow-inner">
+            <div class="mb-6 rounded-2xl overflow-hidden border border-amber-200 max-h-48 flex items-center justify-center bg-stone-50 shadow-inner">
                 <img src="https://drive.google.com/thumbnail?id=140bnPEVdNq7W0qiF1YqyibaiDjhbC_ho&sz=w2000" 
                      onerror="this.src='https://images.unsplash.com/photo-1512412086892-424af6f78f6d?auto=format&fit=crop&q=80&w=400';" 
                      alt="Awaiting Love" 
                      class="w-full h-full object-cover">
             </div>
 
-            <!-- Countdown Timer Blocks -->
             <div class="grid grid-cols-4 gap-2 mb-4">
-                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
-                    <span id="timer-days" class="block font-serif text-2xl font-bold text-amber-400">00</span>
-                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Days</span>
+                <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm">
+                    <span id="timer-days" class="block font-serif text-2xl font-bold text-amber-500">00</span>
+                    <span class="text-[9px] text-stone-500 uppercase tracking-widest">Days</span>
                 </div>
-                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
-                    <span id="timer-hours" class="block font-serif text-2xl font-bold text-amber-400">00</span>
-                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Hours</span>
+                <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm">
+                    <span id="timer-hours" class="block font-serif text-2xl font-bold text-amber-500">00</span>
+                    <span class="text-[9px] text-stone-500 uppercase tracking-widest">Hours</span>
                 </div>
-                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
-                    <span id="timer-mins" class="block font-serif text-2xl font-bold text-amber-400">00</span>
-                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Mins</span>
+                <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm">
+                    <span id="timer-mins" class="block font-serif text-2xl font-bold text-amber-500">00</span>
+                    <span class="text-[9px] text-stone-500 uppercase tracking-widest">Mins</span>
                 </div>
-                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
-                    <span id="timer-secs" class="block font-serif text-2xl font-bold text-amber-400">00</span>
-                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Secs</span>
+                <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm">
+                    <span id="timer-secs" class="block font-serif text-2xl font-bold text-amber-500">00</span>
+                    <span class="text-[9px] text-stone-500 uppercase tracking-widest">Secs</span>
                 </div>
             </div>
             
-            <p class="text-[10px] text-amber-400/80 italic">Time left until your Eid adventure starts ❤️</p>
+            <p class="text-[10px] text-amber-600/80 italic">Time left until your Eid adventure starts ❤️</p>
         </div>
 
-        <!-- SCREEN 1: Welcome & Intro -->
-        <div id="welcome-screen" class="w-full bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden transition-all duration-700 ease-out transform scale-100 hidden">
-            <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl"></div>
+        <div id="welcome-screen" class="w-full bg-white/70 backdrop-blur-lg border border-amber-300 p-8 rounded-3xl text-center shadow-xl relative overflow-hidden transition-all duration-700 ease-out transform scale-100 hidden">
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl"></div>
             
             <div class="mb-6">
-                <!-- Golden Crescent & Star design -->
                 <div class="inline-block relative">
-                    <i class="fa-solid fa-moon text-5xl md:text-6xl text-amber-400 rotate-[-15deg] filter drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]"></i>
-                    <i class="fa-solid fa-star text-xl text-amber-300 absolute -top-1 -right-1 animate-pulse"></i>
+                    <i class="fa-solid fa-moon text-5xl md:text-6xl text-amber-500 rotate-[-15deg] filter drop-shadow-[0_0_10px_rgba(251,191,36,0.3)]"></i>
+                    <i class="fa-solid fa-star text-xl text-amber-400 absolute -top-1 -right-1 animate-pulse"></i>
                 </div>
             </div>
 
-            <h1 class="font-serif text-3xl md:text-4xl text-amber-300 font-bold tracking-wide mb-2">Eid Mubarak</h1>
-            <h2 class="font-serif text-2xl text-stone-200 mb-6 italic">My Beautiful Wife ✨</h2>
+            <h1 class="font-serif text-3xl md:text-4xl text-emerald-900 font-bold tracking-wide mb-2">Eid Mubarak</h1>
+            <h2 class="font-serif text-2xl text-stone-600 mb-6 italic">My Beautiful Wife ✨</h2>
 
-            <!-- GIF 2 Integrated under frame -->
-            <div class="mb-6 rounded-2xl overflow-hidden border-2 border-amber-400/40 p-1 bg-emerald-950 shadow-lg max-h-48 flex items-center justify-center">
+            <div class="mb-6 rounded-2xl overflow-hidden border border-amber-200 p-1 bg-white shadow-md max-h-48 flex items-center justify-center">
                 <img src="https://drive.google.com/thumbnail?id=1JfhZK7tsGXlm1qndqBIe0q03EUvXg4oP&sz=w2000" 
                      onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=400';" 
                      alt="Romantic Greeting" 
                      class="w-full h-full object-cover rounded-xl">
             </div>
             
-            <p class="text-stone-300 text-sm md:text-base leading-relaxed mb-8 font-sans font-light">
+            <p class="text-stone-700 text-sm md:text-base leading-relaxed mb-8 font-sans font-light">
                 Today is a day of celebration, of beauty, and of gratitude. And my greatest gratitude is always for you.
                 <br><br>
-                Your <span class="text-amber-400 font-semibold">Eidiya</span> is tucked away somewhere safe in our home. To unlock it, you must follow the romantic breadcrumbs I've laid out. I have just handed you your very first QR code!
+                Your <span class="text-amber-600 font-semibold">Eidiya</span> is tucked away somewhere safe in our home. To unlock it, you must follow the romantic breadcrumbs I've laid out. I have just handed you your very first QR code!
             </p>
 
-            <button onclick="startTreasureHunt()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold text-lg rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-100 font-serif flex items-center justify-center gap-2 glow-gold">
+            <button onclick="startTreasureHunt()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold text-lg rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-100 font-serif flex items-center justify-center gap-2 glow-gold">
                 <span>Begin the Journey</span>
-                <i class="fa-solid fa-heart-pulse text-emerald-950 animate-pulse"></i>
+                <i class="fa-solid fa-heart-pulse text-white animate-pulse"></i>
             </button>
             
-            <p class="text-xs text-stone-400/80 mt-4 italic">Prepare your scanner and follow the light.</p>
+            <p class="text-xs text-stone-500 mt-4 italic">Prepare your scanner and follow the light.</p>
         </div>
 
 
-        <!-- SCREEN 2: Main Hunt Dashboard -->
-        <div id="hunt-dashboard" class="w-full hidden bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-6 md:p-8 rounded-3xl shadow-2xl transition-all duration-700 ease-out transform translate-y-8 opacity-0">
+        <div id="hunt-dashboard" class="w-full hidden bg-white/70 backdrop-blur-lg border border-amber-300 p-6 md:p-8 rounded-3xl shadow-xl transition-all duration-700 ease-out transform translate-y-8 opacity-0">
             
-            <!-- Chapter Progress Tracker -->
             <div class="mb-8">
                 <div class="flex justify-between items-center relative mb-2 px-1">
-                    <!-- Progress Bar Track -->
-                    <div class="absolute h-1 bg-emerald-950 top-1/2 left-0 right-0 -translate-y-1/2 rounded-full z-0"></div>
-                    <div id="progress-line" class="absolute h-1 bg-gradient-to-r from-amber-400 to-amber-500 top-1/2 left-0 transition-all duration-500 -translate-y-1/2 rounded-full z-0" style="width: 0%;"></div>
+                    <div class="absolute h-1 bg-stone-200 top-1/2 left-0 right-0 -translate-y-1/2 rounded-full z-0"></div>
+                    <div id="progress-line" class="absolute h-1 bg-gradient-to-r from-amber-300 to-amber-500 top-1/2 left-0 transition-all duration-500 -translate-y-1/2 rounded-full z-0" style="width: 0%;"></div>
                     
-                    <!-- Progress Nodes -->
                     <div class="step-node z-10 flex flex-col items-center">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-amber-500 text-amber-500 text-xs font-bold transition-all" id="node-1">1</div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all" id="node-1">1</div>
                     </div>
                     <div class="step-node z-10 flex flex-col items-center">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-2">2</div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all" id="node-2">2</div>
                     </div>
                     <div class="step-node z-10 flex flex-col items-center">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-3">3</div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all" id="node-3">3</div>
                     </div>
                     <div class="step-node z-10 flex flex-col items-center">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-4">4</div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all" id="node-4">4</div>
                     </div>
                     <div class="step-node z-10 flex flex-col items-center">
-                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-5">5</div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all" id="node-5">5</div>
                     </div>
                 </div>
-                <div class="flex justify-between text-[10px] text-stone-400 font-serif px-1 font-semibold uppercase tracking-wider">
+                <div class="flex justify-between text-[10px] text-stone-500 font-serif px-1 font-semibold uppercase tracking-wider">
                     <span>Intro</span>
                     <span>Spice</span>
                     <span>Beauty</span>
@@ -250,216 +230,193 @@
                 </div>
             </div>
 
-            <!-- Main Clue Card Container -->
-            <div id="clue-card" class="bg-gradient-to-b from-emerald-950/90 to-emerald-900/90 border border-amber-400/20 p-6 rounded-2xl mb-6 relative overflow-hidden transition-all duration-500">
+            <div id="clue-card" class="bg-gradient-to-b from-stone-50 to-stone-100 border border-amber-200 p-6 rounded-2xl mb-6 relative overflow-hidden transition-all duration-500 shadow-sm">
                 <div id="clue-content" class="space-y-4">
-                    <!-- Dynamic Clue content will load here -->
-                </div>
+                    </div>
             </div>
 
-            <!-- Action Area -->
             <div id="scanner-controls" class="space-y-4">
-                <button onclick="openScanner()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold text-base rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 font-serif">
+                <button onclick="openScanner()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold text-base rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 font-serif">
                     <i class="fa-solid fa-qrcode text-lg animate-bounce"></i>
                     <span id="scan-button-text">Scan Next QR Clue</span>
                 </button>
                 
-                <!-- Manual Token Entry Option (Failsafe) -->
                 <div class="text-center">
-                    <button onclick="toggleManualInput()" class="text-stone-400 hover:text-amber-400 text-xs transition-colors underline font-light">
+                    <button onclick="toggleManualInput()" class="text-stone-500 hover:text-amber-600 text-xs transition-colors underline font-light">
                         Camera not working? Enter secret key manually
                     </button>
                 </div>
 
-                <!-- Hidden Manual Input Box -->
-                <div id="manual-input-box" class="hidden flex gap-2 mt-2 bg-emerald-950/60 p-3 rounded-xl border border-amber-400/10 transition-all duration-300">
-                    <input type="text" id="manual-token" placeholder="Enter key (e.g., EID_LOVE_CH1)" class="bg-emerald-950 text-stone-200 border border-amber-400/30 rounded-lg px-3 py-2 text-xs flex-grow focus:outline-none focus:border-amber-400 uppercase tracking-wider">
-                    <button onclick="submitManualToken()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold text-xs rounded-lg transition-all">
+                <div id="manual-input-box" class="hidden flex gap-2 mt-2 bg-stone-50 p-3 rounded-xl border border-amber-200 transition-all duration-300">
+                    <input type="text" id="manual-token" placeholder="Enter key (e.g., EID_LOVE_CH1)" class="bg-white text-stone-700 border border-amber-300 rounded-lg px-3 py-2 text-xs flex-grow focus:outline-none focus:border-amber-500 uppercase tracking-wider">
+                    <button onclick="submitManualToken()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-white font-bold text-xs rounded-lg transition-all shadow-sm">
                         Unlock
                     </button>
                 </div>
             </div>
 
-            <!-- Dashboard status label -->
-            <div class="mt-8 border-t border-amber-400/10 pt-4 text-center text-xs text-stone-500 select-none">
+            <div class="mt-8 border-t border-amber-200 pt-4 text-center text-xs text-stone-400 select-none">
                 <span>Treasure Hunt System Active ❤️</span>
             </div>
         </div>
 
-        <!-- SCREEN 3: Fullscreen Camera Scanner Modal -->
-        <div id="scanner-modal" class="fixed inset-0 bg-emerald-950/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center p-6 hidden transition-opacity duration-300 opacity-0">
-            <!-- Header -->
+        <div id="scanner-modal" class="fixed inset-0 bg-stone-100/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center p-6 hidden transition-opacity duration-300 opacity-0">
             <div class="w-full flex justify-between items-center max-w-md">
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-heart text-amber-500 animate-pulse text-sm"></i>
-                    <span class="font-serif text-amber-300 font-bold tracking-wider text-sm">Sacred Clue Finder</span>
+                    <span class="font-serif text-emerald-900 font-bold tracking-wider text-sm">Sacred Clue Finder</span>
                 </div>
-                <button onclick="closeScanner()" class="w-8 h-8 rounded-full bg-emerald-900 border border-amber-400/30 flex items-center justify-center text-stone-400 hover:text-amber-400 transition-colors">
+                <button onclick="closeScanner()" class="w-8 h-8 rounded-full bg-white border border-amber-300 flex items-center justify-center text-stone-500 hover:text-amber-500 transition-colors shadow-sm">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <!-- Camera View Container -->
             <div class="w-full max-w-md flex flex-col items-center justify-center my-auto relative">
-                <p class="text-stone-300 text-center text-sm mb-4 font-light px-4">
+                <p class="text-stone-600 text-center text-sm mb-4 font-light px-4">
                     Align the QR code inside the elegant gold frame.
                 </p>
 
-                <!-- Scanner Outer Box with Gold Corner Borders -->
-                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-amber-400/20 shadow-[0_0_50px_rgba(251,191,36,0.15)] bg-black">
-                    <!-- Scanner camera frame target -->
+                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border-4 border-white shadow-[0_0_30px_rgba(251,191,36,0.3)] bg-stone-200">
                     <div id="reader" class="w-full h-full overflow-hidden"></div>
                     
-                    <!-- Animated laser sweep line -->
-                    <div class="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent laser-line opacity-70"></div>
+                    <div class="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent laser-line opacity-80"></div>
                 </div>
 
-                <!-- Scanning status text -->
-                <div class="mt-4 flex items-center gap-2 text-stone-400 text-xs">
+                <div class="mt-4 flex items-center gap-2 text-stone-500 text-xs">
                     <i class="fa-solid fa-circle-notch animate-spin text-amber-500"></i>
                     <span>Awaiting signal...</span>
                 </div>
             </div>
 
-            <!-- Instructions Footer -->
-            <div class="w-full max-w-md text-center border-t border-amber-400/10 pt-4">
-                <p class="text-stone-400 text-xs italic">
+            <div class="w-full max-w-md text-center border-t border-amber-200 pt-4">
+                <p class="text-stone-500 text-xs italic">
                     "Every secret holds a piece of my heart."
                 </p>
             </div>
         </div>
 
-        <!-- SCREEN 4: Final Reward Screen -->
-        <div id="success-screen" class="w-full hidden bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden transition-all duration-1000 ease-out transform scale-90 opacity-0">
-            <!-- Radiant golden background circle glowing -->
-            <div class="absolute -right-20 -top-20 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl"></div>
-            <div class="absolute -left-20 -bottom-20 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl"></div>
+        <div id="success-screen" class="w-full hidden bg-white/70 backdrop-blur-lg border border-amber-300 p-8 rounded-3xl text-center shadow-xl relative overflow-hidden transition-all duration-1000 ease-out transform scale-90 opacity-0">
+            <div class="absolute -right-20 -top-20 w-48 h-48 bg-amber-400/20 rounded-full blur-3xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-48 h-48 bg-amber-400/20 rounded-full blur-3xl"></div>
 
             <div class="mb-6 relative flex flex-col items-center justify-center">
-                <!-- Large glowing golden GIF frame instead of static icon -->
-                <div onclick="generateFloatingHearts(event)" class="cursor-pointer inline-block w-32 h-32 rounded-full border-4 border-amber-400 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(251,191,36,0.6)] heart-glow relative z-10 bg-emerald-950">
+                <div onclick="generateFloatingHearts(event)" class="cursor-pointer inline-block w-32 h-32 rounded-full border-4 border-amber-400 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(251,191,36,0.4)] heart-glow relative z-10 bg-white">
                     <img src="https://drive.google.com/thumbnail?id=1wFBXW4tJ0cu-LFn9btLHTadCY7pe8KyV&sz=w2000" 
                          onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400';" 
                          alt="Celebration" 
                          class="w-full h-full object-cover">
                 </div>
-                <!-- Interactive hint -->
-                <p class="text-[10px] text-amber-400 mt-2 tracking-widest uppercase">Tap to celebrate! ❤️</p>
+                <p class="text-[10px] text-amber-600 mt-2 tracking-widest uppercase">Tap to celebrate! ❤️</p>
             </div>
 
-            <h1 class="font-serif text-3xl md:text-4xl text-amber-300 font-bold mb-2">You Found It! ❤️</h1>
-            <h2 class="font-serif text-xl text-stone-200 mb-6">Eid Mubarak, My Queen</h2>
+            <h1 class="font-serif text-3xl md:text-4xl text-emerald-900 font-bold mb-2">You Found It! ❤️</h1>
+            <h2 class="font-serif text-xl text-stone-600 mb-6">Eid Mubarak, My Queen</h2>
 
-            <div class="bg-emerald-950/80 border border-amber-400/30 p-6 rounded-2xl mb-8 text-left leading-relaxed text-sm text-stone-300 space-y-4 font-light">
-                <p class="font-serif italic text-amber-400 text-center text-base">"Happy Eid to the queen of my heart."</p>
+            <div class="bg-stone-50 border border-amber-200 p-6 rounded-2xl mb-8 text-left leading-relaxed text-sm text-stone-700 space-y-4 font-light shadow-sm">
+                <p class="font-serif italic text-amber-600 text-center text-base font-medium">"Happy Eid to the queen of my heart."</p>
                 <p class="text-center">
                     Thank you for making every single day feel like a beautiful celebration. Your smile is my treasure, and your love is my greatest blessing.
                 </p>
-                <p class="text-center font-semibold text-stone-100">
+                <p class="text-center font-semibold text-emerald-900">
                     Your real Eidiya is now waiting for you! ✨
                 </p>
-                <p class="text-stone-400 text-xs text-center border-t border-amber-400/10 pt-3">
+                <p class="text-stone-500 text-xs text-center border-t border-amber-200 pt-3">
                     (Look under your pillow, on your vanity, or ask your loving husband right now!)
                 </p>
             </div>
 
-            <button onclick="resetHuntGame()" class="py-2.5 px-6 border border-amber-400/30 hover:border-amber-400 text-amber-400 hover:bg-amber-400/10 text-xs font-serif rounded-full transition-all">
+            <button onclick="resetHuntGame()" class="py-2.5 px-6 border border-amber-300 hover:border-amber-400 text-amber-600 hover:bg-amber-50 text-xs font-serif rounded-full transition-all">
                 <i class="fa-solid fa-rotate-left mr-1"></i> Start Again
             </button>
         </div>
 
     </main>
 
-    <!-- MODAL: Admin Panel / Husband's Guide -->
-    <div id="admin-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-emerald-900 border-2 border-amber-400/50 p-6 rounded-2xl w-full max-w-md text-stone-200 shadow-2xl relative">
-            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white transition-colors">
+    <div id="admin-modal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white border-2 border-amber-300 p-6 rounded-2xl w-full max-w-md text-stone-700 shadow-2xl relative">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <h3 class="font-serif text-lg text-amber-400 font-bold mb-4 border-b border-amber-400/20 pb-2">
+            <h3 class="font-serif text-lg text-emerald-900 font-bold mb-4 border-b border-amber-200 pb-2">
                 Husband's Control Center 🗝️
             </h3>
 
-            <!-- Password Entry Form -->
             <div id="admin-auth" class="space-y-4">
-                <p class="text-xs text-stone-300">Enter your access password to unlock developer controls & QR print codes:</p>
-                <input type="password" id="admin-pass" placeholder="Password (default is 'love')" class="w-full bg-emerald-950 text-stone-100 border border-amber-400/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400">
-                <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl transition-colors">
+                <p class="text-xs text-stone-500">Enter your access password to unlock developer controls & QR print codes:</p>
+                <input type="password" id="admin-pass" placeholder="Password (default is 'love')" class="w-full bg-stone-50 text-stone-800 border border-amber-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500">
+                <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl transition-colors shadow-sm">
                     Access Dashboard
                 </button>
             </div>
 
-            <!-- Admin Controls (Shown after auth) -->
             <div id="admin-controls-content" class="hidden space-y-4 max-h-[75vh] overflow-y-auto pr-2">
-                <div class="p-3 bg-emerald-950/80 rounded-xl border border-amber-400/20 text-xs space-y-2">
-                    <p class="font-bold text-amber-400 uppercase">Interactive Setup Guide</p>
+                <div class="p-3 bg-stone-50 rounded-xl border border-amber-200 text-xs space-y-2">
+                    <p class="font-bold text-amber-600 uppercase">Interactive Setup Guide</p>
                     <p>1. Copy the raw tokens below to any free QR code generator (e.g. <strong>qr-code-generator.com</strong>).</p>
                     <p>2. Keep the text format exact. If she scans outside this app, it will display the generic request. If scanned here, it will unlock the story!</p>
                 </div>
 
-                <!-- QR Token List -->
                 <div class="space-y-2">
-                    <p class="text-xs font-bold text-amber-400 uppercase">Printable QR Token Codes:</p>
+                    <p class="text-xs font-bold text-emerald-800 uppercase">Printable QR Token Codes:</p>
                     
-                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
-                        <span class="font-semibold text-stone-300">QR 1 (First Handed Clue):</span>
+                    <div class="p-2 bg-stone-100 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-700">QR 1 (First Handed Clue):</span>
                         <div class="flex items-center gap-1.5 mt-1">
-                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH1]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t1">
-                            <button onclick="copyToClipboard('token-t1')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH1]" class="bg-white border border-amber-200 text-stone-600 p-1 rounded text-[10px] w-full" id="token-t1">
+                            <button onclick="copyToClipboard('token-t1')" class="px-2 py-1 bg-amber-500 text-white font-bold rounded text-[10px]">Copy</button>
                         </div>
                     </div>
 
-                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
-                        <span class="font-semibold text-stone-300">QR 2 (Couch/TV area):</span>
+                    <div class="p-2 bg-stone-100 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-700">QR 2 (Couch/TV area):</span>
                         <div class="flex items-center gap-1.5 mt-1">
-                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH2]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t2">
-                            <button onclick="copyToClipboard('token-t2')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH2]" class="bg-white border border-amber-200 text-stone-600 p-1 rounded text-[10px] w-full" id="token-t2">
+                            <button onclick="copyToClipboard('token-t2')" class="px-2 py-1 bg-amber-500 text-white font-bold rounded text-[10px]">Copy</button>
                         </div>
                     </div>
 
-                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
-                        <span class="font-semibold text-stone-300">QR 3 (Mirror/Wardrobe):</span>
+                    <div class="p-2 bg-stone-100 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-700">QR 3 (Mirror/Wardrobe):</span>
                         <div class="flex items-center gap-1.5 mt-1">
-                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH3]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t3">
-                            <button onclick="copyToClipboard('token-t3')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH3]" class="bg-white border border-amber-200 text-stone-600 p-1 rounded text-[10px] w-full" id="token-t3">
+                            <button onclick="copyToClipboard('token-t3')" class="px-2 py-1 bg-amber-500 text-white font-bold rounded text-[10px]">Copy</button>
                         </div>
                     </div>
 
-                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
-                        <span class="font-semibold text-stone-300">QR 4 (Kitchen plant):</span>
+                    <div class="p-2 bg-stone-100 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-700">QR 4 (Kitchen plant):</span>
                         <div class="flex items-center gap-1.5 mt-1">
-                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH4]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t4">
-                            <button onclick="copyToClipboard('token-t4')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH4]" class="bg-white border border-amber-200 text-stone-600 p-1 rounded text-[10px] w-full" id="token-t4">
+                            <button onclick="copyToClipboard('token-t4')" class="px-2 py-1 bg-amber-500 text-white font-bold rounded text-[10px]">Copy</button>
                         </div>
                     </div>
 
-                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
-                        <span class="font-semibold text-stone-300">QR 5 (Pillow/Bed final):</span>
+                    <div class="p-2 bg-stone-100 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-700">QR 5 (Pillow/Bed final):</span>
                         <div class="flex items-center gap-1.5 mt-1">
-                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH5]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t5">
-                            <button onclick="copyToClipboard('token-t5')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH5]" class="bg-white border border-amber-200 text-stone-600 p-1 rounded text-[10px] w-full" id="token-t5">
+                            <button onclick="copyToClipboard('token-t5')" class="px-2 py-1 bg-amber-500 text-white font-bold rounded text-[10px]">Copy</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Simulation Buttons for testing -->
-                <div class="space-y-2 pt-2 border-t border-amber-400/20">
-                    <p class="text-xs font-bold text-amber-400 uppercase">Test Simulator & Date Override:</p>
+                <div class="space-y-2 pt-2 border-t border-amber-200">
+                    <p class="text-xs font-bold text-emerald-800 uppercase">Test Simulator & Date Override:</p>
                     <div class="grid grid-cols-5 gap-1">
-                        <button onclick="simulateScan(1)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 1</button>
-                        <button onclick="simulateScan(2)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 2</button>
-                        <button onclick="simulateScan(3)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 3</button>
-                        <button onclick="simulateScan(4)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 4</button>
-                        <button onclick="simulateScan(5)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 5</button>
+                        <button onclick="simulateScan(1)" class="p-1 bg-stone-200 text-stone-700 text-[10px] rounded hover:bg-amber-500 hover:text-white transition-colors">CH 1</button>
+                        <button onclick="simulateScan(2)" class="p-1 bg-stone-200 text-stone-700 text-[10px] rounded hover:bg-amber-500 hover:text-white transition-colors">CH 2</button>
+                        <button onclick="simulateScan(3)" class="p-1 bg-stone-200 text-stone-700 text-[10px] rounded hover:bg-amber-500 hover:text-white transition-colors">CH 3</button>
+                        <button onclick="simulateScan(4)" class="p-1 bg-stone-200 text-stone-700 text-[10px] rounded hover:bg-amber-500 hover:text-white transition-colors">CH 4</button>
+                        <button onclick="simulateScan(5)" class="p-1 bg-stone-200 text-stone-700 text-[10px] rounded hover:bg-amber-500 hover:text-white transition-colors">CH 5</button>
                     </div>
-                    <button onclick="bypassTimegate()" class="w-full mt-2 py-1.5 bg-amber-600 hover:bg-amber-500 text-emerald-950 font-bold text-[10px] rounded transition-colors uppercase">
+                    <button onclick="bypassTimegate()" class="w-full mt-2 py-1.5 bg-amber-100 border border-amber-300 hover:bg-amber-200 text-amber-800 font-bold text-[10px] rounded transition-colors uppercase">
                         Bypass Time/Date Lock Immediately
                     </button>
                 </div>
 
-                <div class="pt-4 border-t border-amber-400/20 flex gap-2">
-                    <button onclick="resetHuntGame(); closeAdminModal();" class="flex-1 py-2 border border-rose-500 text-rose-500 hover:bg-rose-950/20 rounded-xl text-xs transition-colors">
+                <div class="pt-4 border-t border-amber-200 flex gap-2">
+                    <button onclick="resetHuntGame(); closeAdminModal();" class="flex-1 py-2 border border-rose-400 text-rose-500 hover:bg-rose-50 rounded-xl text-xs transition-colors">
                         Reset All Progress
                     </button>
                 </div>
@@ -467,17 +424,14 @@
         </div>
     </div>
 
-    <!-- Sticky Notification Toast for Alerts -->
-    <div id="toast-message" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-amber-500 text-emerald-950 px-6 py-3 rounded-xl shadow-2xl border-2 border-amber-300 font-bold text-sm hidden z-[100] transition-opacity duration-300 opacity-0 flex items-center gap-2">
+    <div id="toast-message" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white text-emerald-900 px-6 py-3 rounded-xl shadow-lg border-2 border-amber-400 font-bold text-sm hidden z-[100] transition-opacity duration-300 opacity-0 flex items-center gap-2">
         <span id="toast-text">Clue Discovered!</span>
-        <i class="fa-solid fa-heart animate-pulse"></i>
+        <i class="fa-solid fa-heart animate-pulse text-amber-500"></i>
     </div>
 
-    <!-- Elegant Responsive Footer inside container -->
-    <footer class="w-full text-center py-6 text-xs text-amber-400/50 z-10 select-none flex flex-col items-center gap-2">
+    <footer class="w-full text-center py-6 text-xs text-stone-400 z-10 select-none flex flex-col items-center gap-2">
         <p>Made with love, exclusively for you ✨ Eid 2026</p>
-        <!-- Globally visible Admin entry button so you can bypass countdown at any moment -->
-        <button onclick="showAdminModal()" class="hover:text-amber-400 transition-colors text-[10px] opacity-60 hover:opacity-100 flex items-center gap-1 mt-1">
+        <button onclick="showAdminModal()" class="hover:text-amber-500 transition-colors text-[10px] opacity-60 hover:opacity-100 flex items-center gap-1 mt-1">
             <i class="fa-solid fa-lock-open text-[8px]"></i> Admin Controls
         </button>
     </footer>
@@ -539,7 +493,7 @@
         // Expressed as ISO string with timezone offset (+03:00)
         const targetUnlockTime = new Date("2026-05-26T18:00:00+03:00").getTime();
 
-        // On DOM Content Loaded initialization (Prevents blank screen while waiting for images/audio)
+        // On DOM Content Loaded initialization
         document.addEventListener("DOMContentLoaded", function() {
             createBackgroundSparkles();
             setupMusicEngine();
@@ -649,9 +603,21 @@
             showToast("Progress successfully reset!");
         }
 
-        // Display transition into Dashboard
+        // Display transition into Dashboard and start ambient music directly
         function startTreasureHunt() {
             playAudioTransition();
+
+            // Start background music automatically on button click
+            const audioEl = document.getElementById('bg-music');
+            if (!isMusicPlaying) {
+                audioEl.play().then(() => {
+                    isMusicPlaying = true;
+                    updateMusicUI();
+                }).catch(err => {
+                    console.log("Audio play blocked by browser policy.", err);
+                });
+            }
+
             document.getElementById('welcome-screen').classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 document.getElementById('welcome-screen').classList.add('hidden');
@@ -665,20 +631,20 @@
 
         // Render current state details of Dashboard elements
         function updateDashboardUI() {
-            // Update Progress Tracking Nodes
+            // Update Progress Tracking Nodes for light theme
             for (let i = 1; i <= 5; i++) {
                 const node = document.getElementById(`node-${i}`);
                 if (i < currentChapter) {
                     // Completed Chapter Style
-                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-amber-500 border-2 border-amber-500 text-emerald-950 text-xs font-bold transition-all shadow-[0_0_10px_rgba(251,191,36,0.5)]";
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-amber-400 border-2 border-amber-400 text-white text-xs font-bold transition-all shadow-[0_0_10px_rgba(251,191,36,0.3)]";
                     node.innerHTML = `<i class="fa-solid fa-check"></i>`;
                 } else if (i === currentChapter) {
                     // Current Active Chapter Style
-                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-amber-400 text-amber-400 text-xs font-bold transition-all animate-pulse shadow-[0_0_15px_rgba(251,191,36,0.3)]";
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-white border-2 border-amber-500 text-amber-500 text-xs font-bold transition-all animate-pulse shadow-[0_0_15px_rgba(251,191,36,0.2)]";
                     node.innerText = i;
                 } else {
                     // Locked Future Chapter Style
-                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-800 text-stone-600 text-xs font-bold transition-all";
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-stone-100 border-2 border-stone-300 text-stone-400 text-xs font-bold transition-all";
                     node.innerText = i;
                 }
             }
@@ -691,27 +657,26 @@
             const currentData = CHAPTERS_DATA[currentChapter];
             const clueContent = document.getElementById('clue-content');
             
-            // Render beautiful elegant parchment layout with integrated custom romantic GIF 3
+            // Render beautiful elegant parchment layout
             clueContent.innerHTML = `
-                <div class="text-center border-b border-amber-400/20 pb-4 mb-4">
-                    <span class="font-serif text-[11px] tracking-widest text-amber-400 uppercase">Current Destination</span>
-                    <h3 class="font-serif text-xl text-stone-100 font-bold mt-1">${currentData.title}</h3>
+                <div class="text-center border-b border-amber-200 pb-4 mb-4">
+                    <span class="font-serif text-[11px] tracking-widest text-amber-600 uppercase">Current Destination</span>
+                    <h3 class="font-serif text-xl text-emerald-900 font-bold mt-1">${currentData.title}</h3>
                 </div>
                 
-                <!-- GIF 3 Integrated within Clue Card beautifully -->
-                <div class="mb-4 rounded-xl overflow-hidden border border-amber-400/20 max-h-40 flex items-center justify-center bg-emerald-950">
+                <div class="mb-4 rounded-xl overflow-hidden border border-amber-200 max-h-40 flex items-center justify-center bg-stone-100">
                     <img src="https://drive.google.com/thumbnail?id=1m-fyucu74m7W2vgPnl3zAhfDFu9IFQPg&sz=w2000" 
                          onerror="this.src='https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&q=80&w=400';" 
                          alt="Romantic Divider" 
                          class="w-full h-full object-cover">
                 </div>
 
-                <p class="text-sm md:text-base leading-relaxed text-stone-200 italic font-light text-center px-2">
+                <p class="text-sm md:text-base leading-relaxed text-stone-700 italic font-light text-center px-2">
                     ${currentData.clueText}
                 </p>
-                <div class="mt-6 bg-emerald-900/60 p-3 rounded-xl border border-amber-400/10 text-center">
-                    <span class="text-[10px] text-amber-400/80 font-serif tracking-widest uppercase block mb-1">Navigation Clue Hint</span>
-                    <p class="text-xs text-stone-400 font-light">${currentData.hintText}</p>
+                <div class="mt-6 bg-stone-100 p-3 rounded-xl border border-amber-200 text-center">
+                    <span class="text-[10px] text-amber-600 font-serif tracking-widest uppercase block mb-1">Navigation Clue Hint</span>
+                    <p class="text-xs text-stone-600 font-light">${currentData.hintText}</p>
                 </div>
             `;
             
@@ -884,7 +849,7 @@
             }
         }
 
-        // UI Synthesized Sound FX for interactive clicks using Web Audio API (so no audio files fail)
+        // UI Synthesized Sound FX for interactive clicks using Web Audio API
         let audioCtx = null;
         function initAudioContext() {
             if (!audioCtx) {
