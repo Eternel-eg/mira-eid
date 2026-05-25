@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak, My Love ✨</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for premium elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons for clean UI visual keys -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti library for final celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- HTML5-QRCode Library for high-performance in-browser camera scanning -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#012018',
+                            900: '#022c22',
+                            800: '#064e3b',
+                            700: '#0f766e',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        amiri: ['Amiri', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Animations for Romantic Eid Atmosphere */
+        @keyframes float-lantern {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 15px rgba(251, 191, 36, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.5); }
+        }
+        @keyframes laser-sweep {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }
+        @keyframes sparkle-drift {
+            0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100px) scale(1.2) rotate(180deg); opacity: 0; }
+        }
+        @keyframes heart-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        .animate-lantern {
+            animation: float-lantern 6s ease-in-out infinite;
+        }
+        .glow-gold {
+            animation: pulse-gold 3s infinite;
+        }
+        .laser-line {
+            animation: laser-sweep 2.5s infinite linear;
+        }
+        .heart-glow {
+            animation: heart-pulse 2s infinite ease-in-out;
+        }
+        /* Custom scrollbars for a premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #012018;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 text-stone-100 min-h-screen font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-amber-400 selection:text-emerald-950">
+
+    <!-- Background Music Audio Tag -->
+    <audio id="bg-music" src="music1.mp3" loop preload="auto"></audio>
+
+    <!-- Magical Sparkle Layer -->
+    <div id="sparkle-container" class="absolute inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+    <!-- Floating Lantern SVGs (Eid Aesthetic) -->
+    <div class="absolute top-4 left-4 md:left-10 z-10 pointer-events-none opacity-40 md:opacity-75 animate-lantern" style="animation-delay: 0s;">
+        <svg class="w-12 h-20 md:w-16 md:h-28 text-amber-400" fill="currentColor" viewBox="0 0 100 150">
+            <path d="M50,10 C40,25 30,35 30,50 C30,75 40,85 50,90 C60,85 70,75 70,50 C70,35 60,25 50,10 Z" opacity="0.8"/>
+            <rect x="45" y="90" width="10" height="20" rx="3" opacity="0.9"/>
+            <circle cx="50" cy="5" r="5" />
+            <path d="M40,110 L60,110 L50,130 Z" />
+            <line x1="50" y1="0" x2="50" y2="10" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </div>
+    <div class="absolute top-10 right-4 md:right-10 z-10 pointer-events-none opacity-40 md:opacity-75 animate-lantern" style="animation-delay: 2s;">
+        <svg class="w-10 h-16 md:w-14 md:h-24 text-amber-400" fill="currentColor" viewBox="0 0 100 150">
+            <path d="M50,15 C42,28 35,38 35,50 C35,70 42,80 50,85 C58,80 65,70 65,50 C65,38 58,28 50,15 Z" opacity="0.8"/>
+            <rect x="46" y="85" width="8" height="15" rx="2" opacity="0.9"/>
+            <circle cx="50" cy="10" r="4" />
+            <path d="M42,100 L58,100 L50,115 Z" />
+            <line x1="50" y1="0" x2="50" y2="15" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <!-- Audio Player controls floating in top-right -->
+    <div id="audio-control-container" class="absolute top-4 right-4 z-30 flex items-center gap-2 bg-emerald-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-amber-400/30 text-xs hidden">
+        <button id="music-toggle" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-medium">
+            <i class="fa-solid fa-music text-amber-400" id="music-icon"></i>
+            <span id="music-text">Ambient: Off</span>
+        </button>
+    </div>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12 z-10 w-full max-w-lg mx-auto">
+
+        <!-- SCREEN 0: Time-Gate / Countdown Screen (Active before 26/05/2026 6 PM Egypt Time) -->
+        <div id="time-gate-screen" class="w-full bg-amber-950/60 backdrop-blur-lg border border-amber-400/50 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden hidden">
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl"></div>
+            
+            <div class="mb-6">
+                <!-- Golden Crescent & Star design -->
+                <div class="inline-block relative">
+                    <i class="fa-solid fa-hourglass-half text-5xl text-amber-400 filter drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]"></i>
+                </div>
+            </div>
+
+            <h1 class="font-serif text-2xl md:text-3xl text-amber-300 font-bold tracking-wide mb-2">A Secret Awaits...</h1>
+            <p class="text-stone-200 text-xs md:text-sm leading-relaxed mb-6 font-sans font-light">
+                The treasure hunt will open at exactly <span class="text-amber-400 font-semibold">6:00 PM on May 26th</span>. Rest your head, be patient, and let the anticipation build, my love. ✨
+            </p>
+
+            <!-- GIF 1 Embedded gracefully here -->
+            <div class="mb-6 rounded-2xl overflow-hidden border border-amber-400/30 max-h-48 flex items-center justify-center bg-stone-900 shadow-inner">
+                <img src="https://drive.google.com/thumbnail?id=140bnPEVdNq7W0qiF1YqyibaiDjhbC_ho&sz=w2000" 
+                     onerror="this.src='https://images.unsplash.com/photo-1512412086892-424af6f78f6d?auto=format&fit=crop&q=80&w=400';" 
+                     alt="Awaiting Love" 
+                     class="w-full h-full object-cover">
+            </div>
+
+            <!-- Countdown Timer Blocks -->
+            <div class="grid grid-cols-4 gap-2 mb-4">
+                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
+                    <span id="timer-days" class="block font-serif text-2xl font-bold text-amber-400">00</span>
+                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Days</span>
+                </div>
+                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
+                    <span id="timer-hours" class="block font-serif text-2xl font-bold text-amber-400">00</span>
+                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Hours</span>
+                </div>
+                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
+                    <span id="timer-mins" class="block font-serif text-2xl font-bold text-amber-400">00</span>
+                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Mins</span>
+                </div>
+                <div class="bg-stone-900/80 p-3 rounded-xl border border-amber-400/20 shadow-lg">
+                    <span id="timer-secs" class="block font-serif text-2xl font-bold text-amber-400">00</span>
+                    <span class="text-[9px] text-stone-300 uppercase tracking-widest">Secs</span>
+                </div>
+            </div>
+            
+            <p class="text-[10px] text-amber-400/80 italic">Time left until your Eid adventure starts ❤️</p>
+        </div>
+
+        <!-- SCREEN 1: Welcome & Intro -->
+        <div id="welcome-screen" class="w-full bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden transition-all duration-700 ease-out transform scale-100 hidden">
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl"></div>
+            
+            <div class="mb-6">
+                <!-- Golden Crescent & Star design -->
+                <div class="inline-block relative">
+                    <i class="fa-solid fa-moon text-5xl md:text-6xl text-amber-400 rotate-[-15deg] filter drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]"></i>
+                    <i class="fa-solid fa-star text-xl text-amber-300 absolute -top-1 -right-1 animate-pulse"></i>
+                </div>
+            </div>
+
+            <h1 class="font-serif text-3xl md:text-4xl text-amber-300 font-bold tracking-wide mb-2">Eid Mubarak</h1>
+            <h2 class="font-serif text-2xl text-stone-200 mb-6 italic">My Beautiful Wife ✨</h2>
+
+            <!-- GIF 2 Integrated under frame -->
+            <div class="mb-6 rounded-2xl overflow-hidden border-2 border-amber-400/40 p-1 bg-emerald-950 shadow-lg max-h-48 flex items-center justify-center">
+                <img src="https://drive.google.com/thumbnail?id=1JfhZK7tsGXlm1qndqBIe0q03EUvXg4oP&sz=w2000" 
+                     onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=400';" 
+                     alt="Romantic Greeting" 
+                     class="w-full h-full object-cover rounded-xl">
+            </div>
+            
+            <p class="text-stone-300 text-sm md:text-base leading-relaxed mb-8 font-sans font-light">
+                Today is a day of celebration, of beauty, and of gratitude. And my greatest gratitude is always for you.
+                <br><br>
+                Your <span class="text-amber-400 font-semibold">Eidiya</span> is tucked away somewhere safe in our home. To unlock it, you must follow the romantic breadcrumbs I've laid out. I have just handed you your very first QR code!
+            </p>
+
+            <button onclick="startTreasureHunt()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold text-lg rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-100 font-serif flex items-center justify-center gap-2 glow-gold">
+                <span>Begin the Journey</span>
+                <i class="fa-solid fa-heart-pulse text-emerald-950 animate-pulse"></i>
+            </button>
+            
+            <p class="text-xs text-stone-400/80 mt-4 italic">Prepare your scanner and follow the light.</p>
+        </div>
+
+
+        <!-- SCREEN 2: Main Hunt Dashboard -->
+        <div id="hunt-dashboard" class="w-full hidden bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-6 md:p-8 rounded-3xl shadow-2xl transition-all duration-700 ease-out transform translate-y-8 opacity-0">
+            
+            <!-- Chapter Progress Tracker -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center relative mb-2 px-1">
+                    <!-- Progress Bar Track -->
+                    <div class="absolute h-1 bg-emerald-950 top-1/2 left-0 right-0 -translate-y-1/2 rounded-full z-0"></div>
+                    <div id="progress-line" class="absolute h-1 bg-gradient-to-r from-amber-400 to-amber-500 top-1/2 left-0 transition-all duration-500 -translate-y-1/2 rounded-full z-0" style="width: 0%;"></div>
+                    
+                    <!-- Progress Nodes -->
+                    <div class="step-node z-10 flex flex-col items-center">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-amber-500 text-amber-500 text-xs font-bold transition-all" id="node-1">1</div>
+                    </div>
+                    <div class="step-node z-10 flex flex-col items-center">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-2">2</div>
+                    </div>
+                    <div class="step-node z-10 flex flex-col items-center">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-3">3</div>
+                    </div>
+                    <div class="step-node z-10 flex flex-col items-center">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-4">4</div>
+                    </div>
+                    <div class="step-node z-10 flex flex-col items-center">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-600 text-stone-400 text-xs font-bold transition-all" id="node-5">5</div>
+                    </div>
+                </div>
+                <div class="flex justify-between text-[10px] text-stone-400 font-serif px-1 font-semibold uppercase tracking-wider">
+                    <span>Intro</span>
+                    <span>Spice</span>
+                    <span>Beauty</span>
+                    <span>Kitchen</span>
+                    <span>Sweet</span>
+                </div>
+            </div>
+
+            <!-- Main Clue Card Container -->
+            <div id="clue-card" class="bg-gradient-to-b from-emerald-950/90 to-emerald-900/90 border border-amber-400/20 p-6 rounded-2xl mb-6 relative overflow-hidden transition-all duration-500">
+                <div id="clue-content" class="space-y-4">
+                    <!-- Dynamic Clue content will load here -->
+                </div>
+            </div>
+
+            <!-- Action Area -->
+            <div id="scanner-controls" class="space-y-4">
+                <button onclick="openScanner()" class="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold text-base rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 font-serif">
+                    <i class="fa-solid fa-qrcode text-lg animate-bounce"></i>
+                    <span id="scan-button-text">Scan Next QR Clue</span>
+                </button>
+                
+                <!-- Manual Token Entry Option (Failsafe) -->
+                <div class="text-center">
+                    <button onclick="toggleManualInput()" class="text-stone-400 hover:text-amber-400 text-xs transition-colors underline font-light">
+                        Camera not working? Enter secret key manually
+                    </button>
+                </div>
+
+                <!-- Hidden Manual Input Box -->
+                <div id="manual-input-box" class="hidden flex gap-2 mt-2 bg-emerald-950/60 p-3 rounded-xl border border-amber-400/10 transition-all duration-300">
+                    <input type="text" id="manual-token" placeholder="Enter key (e.g., EID_LOVE_CH1)" class="bg-emerald-950 text-stone-200 border border-amber-400/30 rounded-lg px-3 py-2 text-xs flex-grow focus:outline-none focus:border-amber-400 uppercase tracking-wider">
+                    <button onclick="submitManualToken()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold text-xs rounded-lg transition-all">
+                        Unlock
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard status label -->
+            <div class="mt-8 border-t border-amber-400/10 pt-4 text-center text-xs text-stone-500 select-none">
+                <span>Treasure Hunt System Active ❤️</span>
+            </div>
+        </div>
+
+        <!-- SCREEN 3: Fullscreen Camera Scanner Modal -->
+        <div id="scanner-modal" class="fixed inset-0 bg-emerald-950/95 backdrop-blur-xl z-50 flex flex-col justify-between items-center p-6 hidden transition-opacity duration-300 opacity-0">
+            <!-- Header -->
+            <div class="w-full flex justify-between items-center max-w-md">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-amber-500 animate-pulse text-sm"></i>
+                    <span class="font-serif text-amber-300 font-bold tracking-wider text-sm">Sacred Clue Finder</span>
+                </div>
+                <button onclick="closeScanner()" class="w-8 h-8 rounded-full bg-emerald-900 border border-amber-400/30 flex items-center justify-center text-stone-400 hover:text-amber-400 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Camera View Container -->
+            <div class="w-full max-w-md flex flex-col items-center justify-center my-auto relative">
+                <p class="text-stone-300 text-center text-sm mb-4 font-light px-4">
+                    Align the QR code inside the elegant gold frame.
+                </p>
+
+                <!-- Scanner Outer Box with Gold Corner Borders -->
+                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-amber-400/20 shadow-[0_0_50px_rgba(251,191,36,0.15)] bg-black">
+                    <!-- Scanner camera frame target -->
+                    <div id="reader" class="w-full h-full overflow-hidden"></div>
+                    
+                    <!-- Animated laser sweep line -->
+                    <div class="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent laser-line opacity-70"></div>
+                </div>
+
+                <!-- Scanning status text -->
+                <div class="mt-4 flex items-center gap-2 text-stone-400 text-xs">
+                    <i class="fa-solid fa-circle-notch animate-spin text-amber-500"></i>
+                    <span>Awaiting signal...</span>
+                </div>
+            </div>
+
+            <!-- Instructions Footer -->
+            <div class="w-full max-w-md text-center border-t border-amber-400/10 pt-4">
+                <p class="text-stone-400 text-xs italic">
+                    "Every secret holds a piece of my heart."
+                </p>
+            </div>
+        </div>
+
+        <!-- SCREEN 4: Final Reward Screen -->
+        <div id="success-screen" class="w-full hidden bg-emerald-900/40 backdrop-blur-lg border border-amber-400/30 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden transition-all duration-1000 ease-out transform scale-90 opacity-0">
+            <!-- Radiant golden background circle glowing -->
+            <div class="absolute -right-20 -top-20 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl"></div>
+
+            <div class="mb-6 relative flex flex-col items-center justify-center">
+                <!-- Large glowing golden GIF frame instead of static icon -->
+                <div onclick="generateFloatingHearts(event)" class="cursor-pointer inline-block w-32 h-32 rounded-full border-4 border-amber-400 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(251,191,36,0.6)] heart-glow relative z-10 bg-emerald-950">
+                    <img src="https://drive.google.com/thumbnail?id=1wFBXW4tJ0cu-LFn9btLHTadCY7pe8KyV&sz=w2000" 
+                         onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400';" 
+                         alt="Celebration" 
+                         class="w-full h-full object-cover">
+                </div>
+                <!-- Interactive hint -->
+                <p class="text-[10px] text-amber-400 mt-2 tracking-widest uppercase">Tap to celebrate! ❤️</p>
+            </div>
+
+            <h1 class="font-serif text-3xl md:text-4xl text-amber-300 font-bold mb-2">You Found It! ❤️</h1>
+            <h2 class="font-serif text-xl text-stone-200 mb-6">Eid Mubarak, My Queen</h2>
+
+            <div class="bg-emerald-950/80 border border-amber-400/30 p-6 rounded-2xl mb-8 text-left leading-relaxed text-sm text-stone-300 space-y-4 font-light">
+                <p class="font-serif italic text-amber-400 text-center text-base">"Happy Eid to the queen of my heart."</p>
+                <p class="text-center">
+                    Thank you for making every single day feel like a beautiful celebration. Your smile is my treasure, and your love is my greatest blessing.
+                </p>
+                <p class="text-center font-semibold text-stone-100">
+                    Your real Eidiya is now waiting for you! ✨
+                </p>
+                <p class="text-stone-400 text-xs text-center border-t border-amber-400/10 pt-3">
+                    (Look under your pillow, on your vanity, or ask your loving husband right now!)
+                </p>
+            </div>
+
+            <button onclick="resetHuntGame()" class="py-2.5 px-6 border border-amber-400/30 hover:border-amber-400 text-amber-400 hover:bg-amber-400/10 text-xs font-serif rounded-full transition-all">
+                <i class="fa-solid fa-rotate-left mr-1"></i> Start Again
+            </button>
+        </div>
+
+    </main>
+
+    <!-- MODAL: Admin Panel / Husband's Guide -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-emerald-900 border-2 border-amber-400/50 p-6 rounded-2xl w-full max-w-md text-stone-200 shadow-2xl relative">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <h3 class="font-serif text-lg text-amber-400 font-bold mb-4 border-b border-amber-400/20 pb-2">
+                Husband's Control Center 🗝️
+            </h3>
+
+            <!-- Password Entry Form -->
+            <div id="admin-auth" class="space-y-4">
+                <p class="text-xs text-stone-300">Enter your access password to unlock developer controls & QR print codes:</p>
+                <input type="password" id="admin-pass" placeholder="Password (default is 'love')" class="w-full bg-emerald-950 text-stone-100 border border-amber-400/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400">
+                <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl transition-colors">
+                    Access Dashboard
+                </button>
+            </div>
+
+            <!-- Admin Controls (Shown after auth) -->
+            <div id="admin-controls-content" class="hidden space-y-4 max-h-[75vh] overflow-y-auto pr-2">
+                <div class="p-3 bg-emerald-950/80 rounded-xl border border-amber-400/20 text-xs space-y-2">
+                    <p class="font-bold text-amber-400 uppercase">Interactive Setup Guide</p>
+                    <p>1. Copy the raw tokens below to any free QR code generator (e.g. <strong>qr-code-generator.com</strong>).</p>
+                    <p>2. Keep the text format exact. If she scans outside this app, it will display the generic request. If scanned here, it will unlock the story!</p>
+                </div>
+
+                <!-- QR Token List -->
+                <div class="space-y-2">
+                    <p class="text-xs font-bold text-amber-400 uppercase">Printable QR Token Codes:</p>
+                    
+                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-300">QR 1 (First Handed Clue):</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH1]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t1">
+                            <button onclick="copyToClipboard('token-t1')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-300">QR 2 (Couch/TV area):</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH2]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t2">
+                            <button onclick="copyToClipboard('token-t2')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-300">QR 3 (Mirror/Wardrobe):</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH3]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t3">
+                            <button onclick="copyToClipboard('token-t3')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-300">QR 4 (Kitchen plant):</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH4]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t4">
+                            <button onclick="copyToClipboard('token-t4')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="p-2 bg-emerald-950 rounded-lg text-xs space-y-1">
+                        <span class="font-semibold text-stone-300">QR 5 (Pillow/Bed final):</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <input readonly type="text" value="Open this QR in the Treasure Hunt app ❤️ [Token: EID_LOVE_CH5]" class="bg-emerald-900 border border-amber-400/20 text-stone-300 p-1 rounded text-[10px] w-full" id="token-t5">
+                            <button onclick="copyToClipboard('token-t5')" class="px-2 py-1 bg-amber-500 text-emerald-950 font-bold rounded text-[10px]">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Buttons for testing -->
+                <div class="space-y-2 pt-2 border-t border-amber-400/20">
+                    <p class="text-xs font-bold text-amber-400 uppercase">Test Simulator & Date Override:</p>
+                    <div class="grid grid-cols-5 gap-1">
+                        <button onclick="simulateScan(1)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 1</button>
+                        <button onclick="simulateScan(2)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 2</button>
+                        <button onclick="simulateScan(3)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 3</button>
+                        <button onclick="simulateScan(4)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 4</button>
+                        <button onclick="simulateScan(5)" class="p-1 bg-emerald-800 text-stone-200 text-[10px] rounded hover:bg-amber-500 hover:text-emerald-950 transition-colors">CH 5</button>
+                    </div>
+                    <button onclick="bypassTimegate()" class="w-full mt-2 py-1.5 bg-amber-600 hover:bg-amber-500 text-emerald-950 font-bold text-[10px] rounded transition-colors uppercase">
+                        Bypass Time/Date Lock Immediately
+                    </button>
+                </div>
+
+                <div class="pt-4 border-t border-amber-400/20 flex gap-2">
+                    <button onclick="resetHuntGame(); closeAdminModal();" class="flex-1 py-2 border border-rose-500 text-rose-500 hover:bg-rose-950/20 rounded-xl text-xs transition-colors">
+                        Reset All Progress
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Notification Toast for Alerts -->
+    <div id="toast-message" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-amber-500 text-emerald-950 px-6 py-3 rounded-xl shadow-2xl border-2 border-amber-300 font-bold text-sm hidden z-[100] transition-opacity duration-300 opacity-0 flex items-center gap-2">
+        <span id="toast-text">Clue Discovered!</span>
+        <i class="fa-solid fa-heart animate-pulse"></i>
+    </div>
+
+    <!-- Elegant Responsive Footer inside container -->
+    <footer class="w-full text-center py-6 text-xs text-amber-400/50 z-10 select-none flex flex-col items-center gap-2">
+        <p>Made with love, exclusively for you ✨ Eid 2026</p>
+        <!-- Globally visible Admin entry button so you can bypass countdown at any moment -->
+        <button onclick="showAdminModal()" class="hover:text-amber-400 transition-colors text-[10px] opacity-60 hover:opacity-100 flex items-center gap-1 mt-1">
+            <i class="fa-solid fa-lock-open text-[8px]"></i> Admin Controls
+        </button>
+    </footer>
+
+    <script>
+        // Interactive Chapters Database Content
+        const CHAPTERS_DATA = {
+            1: {
+                title: "Chapter 1 — Eid Mubarak",
+                clueText: `“Eid Mubarak, my beautiful wife! ✨<br><br>
+                           Your Eidiya is waiting for you, but this year, you have to find it.<br><br>
+                           I've hidden clues around the house.<br><br>
+                           Your first clue is hiding near the potted Basil and flowers, which add almost as much beauty to our home as you do.”`,
+                hintText: "Search around the green plant pots near the windows or balcony.",
+                token: "EID_LOVE_CH1"
+            },
+            2: {
+                title: "Chapter 2 — The Spice of Life",
+                clueText: `“You always know how to spice up my life! ❤️<br><br>
+                           Now, think about our lazy evenings.<br><br>
+                           Your next clue is waiting where we cuddle up, share snacks, and watch our favorite shows together.”`,
+                hintText: "Search near the TV remote or tucked under one of the living room couch throw cushions.",
+                token: "EID_LOVE_CH2"
+            },
+            3: {
+                title: "Chapter 3 — Beautiful Inside and Out",
+                clueText: `“My favorite view is always you ✨<br><br>
+                           Head to the spot where you pick out your stunning Eid outfits and get ready to dazzle me every day.”`,
+                hintText: "Search around your vanity mirror, closet door, or jewelry storage box.",
+                token: "EID_LOVE_CH3"
+            },
+            4: {
+                title: "Chapter 4 — The Final Stretch",
+                clueText: `“Mashallah, always gorgeous ❤️<br><br>
+                           Now, let's head to the heart of our home.<br><br>
+                           Your next clue is waiting where we keep all the delicious ingredients—take a look around the spot where our kitchen plant is potted!”`,
+                hintText: "Search near the green kitchen plant pot or nearby ingredients shelf.",
+                token: "EID_LOVE_CH4"
+            },
+            5: {
+                title: "Chapter 5 — The Recipe for Love",
+                clueText: `“You're getting so close! ✨<br><br>
+                           This kitchen is where we cook up great meals and sweet memories.<br><br>
+                           For your final destination, it is time to relax.<br><br>
+                           Go look in the place where you rest your beautiful head and dream with me.”`,
+                hintText: "Look closely near where you lay your head to sleep at night.",
+                token: "EID_LOVE_CH5"
+            }
+        };
+
+        // Standard App State Variable tracking
+        let currentChapter = 1;
+        let qrScannerInstance = null;
+        let isMusicPlaying = false;
+        let countdownInterval = null;
+        let timeGateBypassed = false;
+
+        // Target Date: May 26, 2026, 6:00 PM (18:00) Egypt Time (UTC +3)
+        // Expressed as ISO string with timezone offset (+03:00)
+        const targetUnlockTime = new Date("2026-05-26T18:00:00+03:00").getTime();
+
+        // On DOM Content Loaded initialization (Prevents blank screen while waiting for images/audio)
+        document.addEventListener("DOMContentLoaded", function() {
+            createBackgroundSparkles();
+            setupMusicEngine();
+            checkTimeGate();
+        });
+
+        // Time gate lock verification
+        function checkTimeGate() {
+            if (timeGateBypassed) return;
+
+            const now = new Date().getTime();
+            if (now < targetUnlockTime) {
+                // Keep game locked, show countdown
+                document.getElementById('time-gate-screen').classList.remove('hidden');
+                document.getElementById('welcome-screen').classList.add('hidden');
+                document.getElementById('hunt-dashboard').classList.add('hidden');
+                document.getElementById('audio-control-container').classList.add('hidden');
+                
+                startCountdown();
+            } else {
+                // Game is unlocked!
+                unlockGame();
+            }
+        }
+
+        function startCountdown() {
+            if (countdownInterval) clearInterval(countdownInterval);
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const difference = targetUnlockTime - now;
+
+                if (difference <= 0 || timeGateBypassed) {
+                    clearInterval(countdownInterval);
+                    unlockGame();
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('timer-days').innerText = String(days).padStart(2, '0');
+                document.getElementById('timer-hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('timer-mins').innerText = String(mins).padStart(2, '0');
+                document.getElementById('timer-secs').innerText = String(secs).padStart(2, '0');
+            }
+
+            updateTimer();
+            countdownInterval = setInterval(updateTimer, 1000);
+        }
+
+        function unlockGame() {
+            document.getElementById('time-gate-screen').classList.add('hidden');
+            document.getElementById('welcome-screen').classList.remove('hidden');
+            document.getElementById('audio-control-container').classList.remove('hidden');
+            loadProgress();
+        }
+
+        function bypassTimegate() {
+            timeGateBypassed = true;
+            if (countdownInterval) clearInterval(countdownInterval);
+            unlockGame();
+            closeAdminModal();
+            showToast("Date & Time Gate successfully bypassed!");
+        }
+
+        // Progress Persistence Management using localStorage
+        function loadProgress() {
+            if (document.getElementById('welcome-screen').classList.contains('hidden') && 
+                document.getElementById('time-gate-screen').classList.contains('hidden') &&
+                document.getElementById('success-screen').classList.contains('hidden')) {
+                // Ensure dashboard is visible if not in success/welcome
+                document.getElementById('hunt-dashboard').classList.remove('hidden');
+            }
+
+            const savedChapter = localStorage.getItem('eid_hunt_chapter');
+            if (savedChapter) {
+                currentChapter = parseInt(savedChapter);
+                if (currentChapter > 5) {
+                    showSuccessScreen();
+                } else {
+                    updateDashboardUI();
+                }
+            } else {
+                currentChapter = 1;
+                updateDashboardUI();
+            }
+        }
+
+        // Save progress function
+        function saveProgress(chapter) {
+            localStorage.setItem('eid_hunt_chapter', chapter);
+            currentChapter = chapter;
+            updateDashboardUI();
+        }
+
+        // Reset game progress completely
+        function resetHuntGame() {
+            localStorage.removeItem('eid_hunt_chapter');
+            currentChapter = 1;
+            document.getElementById('success-screen').classList.add('hidden');
+            document.getElementById('welcome-screen').classList.remove('hidden');
+            document.getElementById('hunt-dashboard').classList.add('hidden');
+            updateDashboardUI();
+            showToast("Progress successfully reset!");
+        }
+
+        // Display transition into Dashboard
+        function startTreasureHunt() {
+            playAudioTransition();
+            document.getElementById('welcome-screen').classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                document.getElementById('welcome-screen').classList.add('hidden');
+                document.getElementById('hunt-dashboard').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('hunt-dashboard').classList.remove('translate-y-8', 'opacity-0');
+                    updateDashboardUI();
+                }, 50);
+            }, 500);
+        }
+
+        // Render current state details of Dashboard elements
+        function updateDashboardUI() {
+            // Update Progress Tracking Nodes
+            for (let i = 1; i <= 5; i++) {
+                const node = document.getElementById(`node-${i}`);
+                if (i < currentChapter) {
+                    // Completed Chapter Style
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-amber-500 border-2 border-amber-500 text-emerald-950 text-xs font-bold transition-all shadow-[0_0_10px_rgba(251,191,36,0.5)]";
+                    node.innerHTML = `<i class="fa-solid fa-check"></i>`;
+                } else if (i === currentChapter) {
+                    // Current Active Chapter Style
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-amber-400 text-amber-400 text-xs font-bold transition-all animate-pulse shadow-[0_0_15px_rgba(251,191,36,0.3)]";
+                    node.innerText = i;
+                } else {
+                    // Locked Future Chapter Style
+                    node.className = "w-8 h-8 rounded-full flex items-center justify-center bg-emerald-950 border-2 border-stone-800 text-stone-600 text-xs font-bold transition-all";
+                    node.innerText = i;
+                }
+            }
+
+            // Update Connector Bar Progress
+            const progressPct = ((currentChapter - 1) / 4) * 100;
+            document.getElementById('progress-line').style.width = `${progressPct}%`;
+
+            // Setup Details on Clue Card
+            const currentData = CHAPTERS_DATA[currentChapter];
+            const clueContent = document.getElementById('clue-content');
+            
+            // Render beautiful elegant parchment layout with integrated custom romantic GIF 3
+            clueContent.innerHTML = `
+                <div class="text-center border-b border-amber-400/20 pb-4 mb-4">
+                    <span class="font-serif text-[11px] tracking-widest text-amber-400 uppercase">Current Destination</span>
+                    <h3 class="font-serif text-xl text-stone-100 font-bold mt-1">${currentData.title}</h3>
+                </div>
+                
+                <!-- GIF 3 Integrated within Clue Card beautifully -->
+                <div class="mb-4 rounded-xl overflow-hidden border border-amber-400/20 max-h-40 flex items-center justify-center bg-emerald-950">
+                    <img src="https://drive.google.com/thumbnail?id=1m-fyucu74m7W2vgPnl3zAhfDFu9IFQPg&sz=w2000" 
+                         onerror="this.src='https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&q=80&w=400';" 
+                         alt="Romantic Divider" 
+                         class="w-full h-full object-cover">
+                </div>
+
+                <p class="text-sm md:text-base leading-relaxed text-stone-200 italic font-light text-center px-2">
+                    ${currentData.clueText}
+                </p>
+                <div class="mt-6 bg-emerald-900/60 p-3 rounded-xl border border-amber-400/10 text-center">
+                    <span class="text-[10px] text-amber-400/80 font-serif tracking-widest uppercase block mb-1">Navigation Clue Hint</span>
+                    <p class="text-xs text-stone-400 font-light">${currentData.hintText}</p>
+                </div>
+            `;
+            
+            // Adjust Button Scan text
+            document.getElementById('scan-button-text').innerText = `Scan Chapter ${currentChapter} Clue`;
+        }
+
+        // Core Web-QR Scanner Initialization Logic
+        function openScanner() {
+            playAudioTick();
+            const modal = document.getElementById('scanner-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+            }, 50);
+
+            // Starting QR Scanning library Engine
+            const qrConfig = { fps: 15, qrbox: { width: 250, height: 250 } };
+            
+            qrScannerInstance = new Html5Qrcode("reader");
+            
+            qrScannerInstance.start(
+                { facingMode: "environment" }, 
+                qrConfig,
+                (decodedText, decodedResult) => {
+                    // Successful decode handle
+                    handleScannedResult(decodedText);
+                },
+                (errorMessage) => {
+                    // Verbose continuous search logging bypassed for smoothness
+                }
+            ).catch(err => {
+                console.error("Camera access failed", err);
+                showToast("Camera access error. Please enter manual key!");
+                toggleManualInput();
+                closeScanner();
+            });
+        }
+
+        function closeScanner() {
+            const modal = document.getElementById('scanner-modal');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+
+            if (qrScannerInstance) {
+                qrScannerInstance.stop().then(() => {
+                    qrScannerInstance = null;
+                }).catch(err => console.error("Error stopping scanner:", err));
+            }
+        }
+
+        // Matching scanned texts to secure identifiers
+        function handleScannedResult(scannedText) {
+            console.log("Decoded scanning content: ", scannedText);
+            const activeData = CHAPTERS_DATA[currentChapter];
+            
+            // Verify if active token code matches the decoded content regex match
+            if (scannedText.includes(activeData.token)) {
+                closeScanner();
+                advanceChapterSuccess();
+            } else {
+                // Determine if they scanned an out-of-order correct future token
+                let foundFuture = false;
+                for (let ch in CHAPTERS_DATA) {
+                    if (scannedText.includes(CHAPTERS_DATA[ch].token)) {
+                        foundFuture = true;
+                        showToast(`You need to solve Chapter ${currentChapter} first! ❤️`);
+                        playErrorChime();
+                        break;
+                    }
+                }
+                if (!foundFuture) {
+                    showToast("Not a valid treasure clue. Try again! 🔎");
+                    playErrorChime();
+                }
+            }
+        }
+
+        // Transition workflow on successfully unlocking a chapter
+        function advanceChapterSuccess() {
+            playUnlockChime();
+            triggerConfetti();
+
+            // Highlight progress animation
+            showToast("Clue Decoded! ❤️ Sparkles in the air...");
+            
+            const nextChapter = currentChapter + 1;
+            
+            if (nextChapter > 5) {
+                // Treasure completed
+                setTimeout(() => {
+                    showSuccessScreen();
+                }, 1000);
+            } else {
+                // Fade effect layout transition
+                const dashboard = document.getElementById('hunt-dashboard');
+                dashboard.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => {
+                    saveProgress(nextChapter);
+                    dashboard.classList.remove('opacity-0', 'translate-y-4');
+                }, 500);
+            }
+        }
+
+        function showSuccessScreen() {
+            playVictoryFanfare();
+            triggerConfettiForever();
+            
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('hunt-dashboard').classList.add('hidden');
+            
+            const successScr = document.getElementById('success-screen');
+            successScr.classList.remove('hidden');
+            setTimeout(() => {
+                successScr.classList.remove('scale-90', 'opacity-0');
+            }, 50);
+        }
+
+        // Failsafe Manual Token Processing
+        function toggleManualInput() {
+            const el = document.getElementById('manual-input-box');
+            el.classList.toggle('hidden');
+        }
+
+        function submitManualToken() {
+            const inputVal = document.getElementById('manual-token').value.trim().toUpperCase();
+            const activeData = CHAPTERS_DATA[currentChapter];
+
+            if (inputVal === activeData.token || inputVal.includes(activeData.token)) {
+                document.getElementById('manual-token').value = "";
+                document.getElementById('manual-input-box').classList.add('hidden');
+                advanceChapterSuccess();
+            } else {
+                showToast("Incorrect Code. Search thoroughly my love! ✨");
+                playErrorChime();
+            }
+        }
+
+        // Audio Engine Setup with music1.mp3 Support
+        function setupMusicEngine() {
+            const audioEl = document.getElementById('bg-music');
+            
+            document.getElementById('music-toggle').onclick = function() {
+                if (isMusicPlaying) {
+                    audioEl.pause();
+                    isMusicPlaying = false;
+                } else {
+                    audioEl.play().then(() => {
+                        isMusicPlaying = true;
+                    }).catch(err => {
+                        console.log("Audio play blocked by browser policy. Requires user interaction first.", err);
+                        showToast("Please interact with screen first, then tap ambient sound!");
+                    });
+                }
+                updateMusicUI();
+            };
+        }
+
+        function updateMusicUI() {
+            const text = document.getElementById('music-text');
+            const icon = document.getElementById('music-icon');
+            if (isMusicPlaying) {
+                text.innerText = "Ambient: On";
+                icon.classList.add('animate-spin');
+            } else {
+                text.innerText = "Ambient: Off";
+                icon.classList.remove('animate-spin');
+            }
+        }
+
+        // UI Synthesized Sound FX for interactive clicks using Web Audio API (so no audio files fail)
+        let audioCtx = null;
+        function initAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function playAudioTick() {
+            initAudioContext();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.05);
+        }
+
+        function playAudioTransition() {
+            initAudioContext();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.3);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.32);
+        }
+
+        function playUnlockChime() {
+            initAudioContext();
+            const now = audioCtx.currentTime;
+            const notes = [523.25, 659.25, 783.99, 1046.50]; // C5 - E5 - G5 - C6 Arpeggio
+            
+            notes.forEach((freq, idx) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, now + (idx * 0.12));
+                
+                gain.gain.setValueAtTime(0, now + (idx * 0.12));
+                gain.gain.linearRampToValueAtTime(0.1, now + (idx * 0.12) + 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + (idx * 0.12) + 0.6);
+                
+                osc.start(now + (idx * 0.12));
+                osc.stop(now + (idx * 0.12) + 0.6);
+            });
+        }
+
+        function playErrorChime() {
+            initAudioContext();
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(220, now);
+            osc.frequency.setValueAtTime(196, now + 0.15);
+            
+            gain.gain.setValueAtTime(0.05, now);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.4);
+            
+            osc.start(now);
+            osc.stop(now + 0.42);
+        }
+
+        function playVictoryFanfare() {
+            initAudioContext();
+            const now = audioCtx.currentTime;
+            const chords = [392.00, 493.88, 587.33, 783.99, 987.77]; // G Major
+            chords.forEach((freq, idx) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.frequency.setValueAtTime(freq, now + (idx * 0.08));
+                gain.gain.setValueAtTime(0, now + (idx * 0.08));
+                gain.gain.linearRampToValueAtTime(0.12, now + (idx * 0.08) + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + (idx * 0.08) + 1.2);
+                
+                osc.start(now + (idx * 0.08));
+                osc.stop(now + (idx * 0.08) + 1.3);
+            });
+        }
+
+        // Background Sparkles Simulation Layer
+        function createBackgroundSparkles() {
+            const container = document.getElementById('sparkle-container');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'absolute bg-amber-400 rounded-full opacity-0 pointer-events-none';
+                
+                const size = Math.random() * 3 + 2;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                resetSparklePos(sparkle);
+                container.appendChild(sparkle);
+            }
+        }
+
+        function resetSparklePos(el) {
+            el.style.left = `${Math.random() * 100}%`;
+            el.style.top = `${Math.random() * 100}%`;
+            el.style.animation = 'none';
+            
+            void el.offsetWidth; // Recalculate reflow safely
+            
+            const duration = Math.random() * 6 + 4;
+            const delay = Math.random() * 5;
+            el.style.animation = `sparkle-drift ${duration}s linear ${delay}s infinite`;
+        }
+
+        // Generate customized beautiful floating heart elements on clicks
+        function generateFloatingHearts(event) {
+            const container = document.getElementById('sparkle-container');
+            const rect = event.currentTarget.getBoundingClientRect();
+            
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('i');
+                heart.className = "fa-solid fa-heart absolute text-amber-500/80 pointer-events-none z-50 text-xs";
+                
+                const xOffset = (Math.random() - 0.5) * 120;
+                const yOffset = (Math.random() - 0.5) * 120;
+                
+                heart.style.left = `${rect.left + rect.width / 2 + window.scrollX + xOffset}px`;
+                heart.style.top = `${rect.top + rect.height / 2 + window.scrollY + yOffset}px`;
+                
+                const randScale = Math.random() * 0.8 + 0.6;
+                const animDuration = Math.random() * 1.5 + 1.0;
+                
+                heart.style.transition = `all ${animDuration}s cubic-bezier(0.1, 0.8, 0.3, 1)`;
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.style.transform = `translate(${(Math.random() - 0.5) * 160}px, -150px) scale(${randScale})`;
+                    heart.style.opacity = '0';
+                }, 10);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, animDuration * 1000 + 100);
+            }
+            playAudioTransition();
+        }
+
+        // Display animated premium visual Toast alert
+        function showToast(message) {
+            const toast = document.getElementById('toast-message');
+            const textEl = document.getElementById('toast-text');
+            textEl.innerText = message;
+            
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.remove('opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        // Trigger high performance confetti bursts
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#fbbf24', '#f59e0b', '#047857', '#0f766e', '#fef08a']
+            });
+        }
+
+        function triggerConfettiForever() {
+            const end = Date.now() + (5 * 1000);
+            const colors = ['#fbbf24', '#f59e0b', '#047857', '#0f766e'];
+
+            (function frame() {
+                confetti({
+                    particleCount: 2,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: colors
+                });
+                confetti({
+                    particleCount: 2,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: colors
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Developer Authentication & Simulation Panel Actions
+        function showAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+        }
+
+        // Close Admin Controls panel
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function authenticateAdmin() {
+            const password = document.getElementById('admin-pass').value;
+            if (password === 'mohluv') {
+                document.getElementById('admin-auth').classList.add('hidden');
+                document.getElementById('admin-controls-content').classList.remove('hidden');
+            } else {
+                alert('Access Denied. Check your heart password!');
+            }
+        }
+
+        function simulateScan(chapterNumber) {
+            closeAdminModal();
+            saveProgress(chapterNumber);
+            updateDashboardUI();
+            showToast(`Simulated Chapter ${chapterNumber} successfully!`);
+            playUnlockChime();
+        }
+
+        function copyToClipboard(elementId) {
+            const inputEl = document.getElementById(elementId);
+            inputEl.select();
+            inputEl.setSelectionRange(0, 99999); // Mobile compatibility
+            document.execCommand('copy');
+            showToast("Copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
